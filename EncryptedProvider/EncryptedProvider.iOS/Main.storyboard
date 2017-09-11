@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" customColorSpace="sRGB" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change  Password After Save To See Failed Decrypt" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="216" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="0">
+                                <rect key="frame" x="20" y="20" width="560" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0.52549019607843139" blue="1" alpha="1"/>
+                                <constraints>
+                                    <constraint id="1638" firstAttribute="height" constant="61"/>
+                                </constraints>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MyPassword" borderStyle="roundedRect" minimumFontSize="17" id="223" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="29" y="101" width="356" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="3154" firstItem="223" firstAttribute="height" constant="506">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3154"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3154"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="224" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="140" y="157" width="135" height="30"/>
+                                <state key="normal" title="Save Data">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="BtnStoreData_TouchUpInside:" destination="BYZ-38-t0r" id="589" eventType="touchUpInside"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="1685" firstAttribute="width" constant="135"/>
+                                    <constraint id="1991" firstItem="224" firstAttribute="height" constant="30"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="225" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="162" y="212" width="89" height="30"/>
+                                <state key="normal" title="Restore Data">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="BtnRestoreData_TouchUpInside:" destination="BYZ-38-t0r" id="590" eventType="touchUpInside"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="1992" firstItem="225" firstAttribute="height" constant="30"/>
+                                </constraints>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="226" translatesAutoresizingMaskIntoConstraints="NO" numberOfLines="0">
+                                <rect key="frame" x="20" y="250" width="374" height="476"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0.027450980392156862" blue="0.086274509803921567" alpha="1"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1635" firstItem="216" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20"/>
+                            <constraint id="1636" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="216" secondAttribute="trailing" constant="20"/>
+                            <constraint id="1639" firstItem="216" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom"/>
+                            <constraint id="1640" firstItem="216" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="1641" firstItem="216" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="1691" firstItem="224" firstAttribute="top" secondItem="223" secondAttribute="bottom" constant="25"/>
+                            <constraint id="1693" firstItem="225" firstAttribute="top" secondItem="224" secondAttribute="bottom" constant="26"/>
+                            <constraint id="2476" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="226" secondAttribute="trailing" constant="20"/>
+                            <constraint id="2477" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="226" secondAttribute="bottom" constant="10"/>
+                            <constraint id="2480" firstItem="226" firstAttribute="top" secondItem="225" secondAttribute="bottom" constant="8"/>
+                            <constraint id="2483" firstItem="226" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="3127" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="223" secondAttribute="trailing" constant="9"/>
+                            <constraint id="3128" firstItem="223" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9"/>
+                            <constraint id="3233" firstItem="223" firstAttribute="top" secondItem="216" secondAttribute="bottom" constant="20"/>
+                            <constraint id="4260" firstItem="224" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="4262" firstItem="225" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2476"/>
+                                <exclude reference="2477"/>
+                                <exclude reference="2480"/>
+                                <exclude reference="2483"/>
+                                <exclude reference="3127"/>
+                                <exclude reference="3128"/>
+                                <exclude reference="3233"/>
+                                <exclude reference="4260"/>
+                                <exclude reference="4262"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="2476"/>
+                                <include reference="2477"/>
+                                <include reference="2480"/>
+                                <include reference="2483"/>
+                                <include reference="3127"/>
+                                <include reference="3128"/>
+                                <include reference="3233"/>
+                                <include reference="4260"/>
+                                <include reference="4262"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="btnStoreData" destination="224" id="name-outlet-224"/>
+                        <outlet property="btnRestoreData" destination="225" id="name-outlet-225"/>
+                        <outlet property="lblResult" destination="226" id="name-outlet-226"/>
+                        <outlet property="txtPassword" destination="223" id="name-outlet-223"/>
+                        <outlet property="PasswordText" destination="216" id="name-outlet-216"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina55"/>
+    </simulatedMetricsContainer>
+</document>
