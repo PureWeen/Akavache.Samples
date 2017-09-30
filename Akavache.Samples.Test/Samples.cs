@@ -13,17 +13,12 @@ namespace Akavache.Samples.Test
         }
 
         [Fact]
-        public void MethodTest()
+        public void DontStoreTheValueReturnedFromTheGetAndFetchFunction()
         {
             BlobCache.InMemory
                 .GetAndFetchLatest<object>("key",
                 () => Observable.Throw<ConnectivityException>(new ConnectivityException()))
-                .Catch((ConnectivityException conn) =>
-                {
-                    //don't return anything if connectivity is broken
-                    return Observable.Never<object>();                   
-
-                })
+                .Catch((ConnectivityException conn) => Observable.Never<object>())
                 .Subscribe();
         }
     }
