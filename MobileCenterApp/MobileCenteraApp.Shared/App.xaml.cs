@@ -30,8 +30,8 @@ namespace MobileCenterApp
         const string androidKey = "987b5941-4fac-4968-933e-98a7ff29237c";
         const string iosKey = "fe2bf05d-f4f9-48a6-83d9-ea8033fbb644";
 
-
-        private IBlobCache _BlobCache;
+        private Lazy<IBlobCache> _LazyBlob;
+        private IBlobCache _BlobCache => _LazyBlob.Value;
 
         public App ()
         {
@@ -40,13 +40,13 @@ namespace MobileCenterApp
 
             SQLitePCL.Batteries_V2.Init();
             SQLitePCL.raw.FreezeProvider();
-            _BlobCache = new SQLitePersistentBlobCache("afile.db");
+            _LazyBlob = new Lazy<IBlobCache>(() => new SQLitePersistentBlobCache("afile.db"));
             MainPage = new MobileCenterApp.MainPage();
         }
 
 		protected override void OnStart ()
         {
-            MobileCenter.LogLevel = LogLevel.Error;
+            MobileCenter.LogLevel = LogLevel.Verbose;
             Crashes.ShouldProcessErrorReport = ShouldProcess;
             Crashes.ShouldAwaitUserConfirmation = ConfirmationHandler;
             Crashes.GetErrorAttachments = GetErrorAttachments;
@@ -70,6 +70,7 @@ namespace MobileCenterApp
 
 
 
+            //just a dumb way to push and pull some data from the cache
             MainPage.Appearing += (x, y) =>
             {
                 _BlobCache.GetObject<SomeObject>("test")
