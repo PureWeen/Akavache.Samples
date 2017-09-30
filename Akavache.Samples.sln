@@ -12,12 +12,15 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Akavache.Samples.Test", "Akavache.Samples.Test\Akavache.Samples.Test.csproj", "{282883FF-3BCF-43C4-BD34-EAC317B6EE64}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MobileCenterApp", "MobileCenterApp", "{FF7EC901-63A4-44C7-B719-B9F741F19353}"
+	ProjectSection(SolutionItems) = preProject
+		MobileCenterApp\Readme.md = MobileCenterApp\Readme.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileCenterApp.iOS", "MobileCenterApp\MobileCenterApp.iOS\MobileCenterApp.iOS.csproj", "{8B57898D-A7BF-4E5D-BCC6-4D9C95A4F7CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileCenterApp.Android", "MobileCenterApp\MobileCenterApp.Android\MobileCenterApp.Android.csproj", "{91318621-D741-4874-9C9C-C555D1BACEDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileCenteraApp.Shared", "MobileCenterApp\MobileCenteraApp.Shared\MobileCenteraApp.Shared.csproj", "{882E5D66-D6D4-4CBB-8A51-6C8763CD9DAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobileCenteraApp.Shared", "MobileCenterApp\MobileCenteraApp.Shared\MobileCenteraApp.Shared.csproj", "{882E5D66-D6D4-4CBB-8A51-6C8763CD9DAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

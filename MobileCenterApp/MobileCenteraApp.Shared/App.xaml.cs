@@ -165,10 +165,14 @@ namespace MobileCenterApp
                     {
                         userConfirmationSelection = UserConfirmation.DontSend;
                     }
+                     
+                    
                     MobileCenterLog.Debug(LogTag, "User selected confirmation option: \"" + answer + "\"");
                     Crashes.NotifyUserConfirmation(userConfirmationSelection);
                 });
             });
+
+            
 
             return true;
         }
