@@ -10,9 +10,9 @@ using System.Reactive.Concurrency;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Crashes;
 using Microsoft.Azure.Mobile.Distribute;
-using Microsoft.Azure.Mobile.Analytics;
-using Microsoft.Azure.Mobile.Push;
+using Microsoft.Azure.Mobile.Analytics; 
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MobileCenterApp
 {
@@ -40,7 +40,11 @@ namespace MobileCenterApp
 
             SQLitePCL.Batteries_V2.Init();
             SQLitePCL.raw.FreezeProvider();
-            _LazyBlob = new Lazy<IBlobCache>(() => new SQLitePersistentBlobCache("afile.db"));
+            Akavache.BlobCache.ApplicationName = "myApp";
+            var fs = Splat.Locator.Current.GetService(typeof(IFilesystemProvider)) as IFilesystemProvider;
+
+            _ = fs ?? throw new ArgumentNullException(nameof(fs));
+            _LazyBlob = new Lazy<IBlobCache>(() => new SQLitePersistentBlobCache(Path.Combine(fs.GetDefaultLocalMachineCacheDirectory(), "afile.db"), BlobCache.TaskpoolScheduler));
             MainPage = new MobileCenterApp.MainPage();
         }
 
@@ -52,7 +56,7 @@ namespace MobileCenterApp
             Crashes.GetErrorAttachments = GetErrorAttachments;
             Distribute.ReleaseAvailable = OnReleaseAvailable;
             MobileCenter.Start($"uwp={uwpKey};android={androidKey};ios={iosKey}",
-                               typeof(Analytics), typeof(Crashes), typeof(Distribute), typeof(Push));
+                               typeof(Analytics), typeof(Crashes), typeof(Distribute));
 
             MobileCenter.GetInstallIdAsync().ContinueWith(installId =>
             {
